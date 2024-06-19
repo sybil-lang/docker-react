@@ -4,9 +4,7 @@ services:
     stdin_open: true
     environment:
       - CHOKIDAR_USEPOLLING=true
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+    image: charu97/my-react-app:latest
     ports:
       - '3000:3000'
     volumes:
@@ -14,9 +12,7 @@ services:
       - .:/app
   tests:
     stdin_open: true
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
+    image: charu97/my-react-app:latest
     volumes:
       - /app/node_modules
       - .:/app
